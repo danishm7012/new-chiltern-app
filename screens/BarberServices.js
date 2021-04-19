@@ -40,7 +40,8 @@ return (
       props.navigation.navigate({routeName: 'Contact_Us'})}}
     title="Inquiry Now"
 raised={true}
-type="outline"
+
+
 />
   </View>
   {/* <View style={{paddingTop: StatusBar.currentHeight*1.2, justifyContent:'center',alignItems:'center'}}>

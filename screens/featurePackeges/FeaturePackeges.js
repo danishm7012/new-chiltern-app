@@ -112,7 +112,14 @@ const  FeaturePackeges = (props) => {
       ),
       headerRight: () => (  <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item title="compdetail"
-        iconName="ios-add"/>
+        iconName="ios-add"
+        onPress={
+          () => {
+            navData.navigation.navigate('Packeges_Form')
+          }
+         }
+        
+        />
       </HeaderButtons>
       )
     };

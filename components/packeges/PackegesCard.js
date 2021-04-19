@@ -74,6 +74,90 @@ const PackegesCard = (props) => {
     name = {'Packeges'}
     detail = {'Packeges Detail'}
     />
+    <Cards
+    
+    imgs={ require('../../assets/ChiltrenPackages/chiltern5.jpg')  }
+    name = {'Packeges'}
+    detail = {'Packeges Detail'}
+    />
+    <Cards
+    
+    imgs={ require('../../assets/ChiltrenPackages/chiltern6.jpg')  }
+    name = {'Packeges'}
+    detail = {'Packeges Detail'}
+    />
+    <Cards
+    
+    imgs={ require('../../assets/ChiltrenPackages/chiltern7.jpg')  }
+    name = {'Packeges'}
+    detail = {'Packeges Detail'}
+    />
+    <Cards
+    
+    imgs={ require('../../assets/ChiltrenPackages/chiltern8.jpg')  }
+    name = {'Packeges'}
+    detail = {'Packeges Detail'}
+    />
+    <Cards
+    
+    imgs={ require('../../assets/ChiltrenPackages/chiltern9.jpg')  }
+    name = {'Packeges'}
+    detail = {'Packeges Detail'}
+    />
+    <Cards
+    
+    imgs={ require('../../assets/ChiltrenPackages/chiltern10.jpg')  }
+    name = {'Packeges'}
+    detail = {'Packeges Detail'}
+    />
+    <Cards
+    
+    imgs={ require('../../assets/ChiltrenPackages/chiltern11.jpg')  }
+    name = {'Packeges'}
+    detail = {'Packeges Detail'}
+    />
+    <Cards
+    
+    imgs={ require('../../assets/ChiltrenPackages/chiltern12.jpg')  }
+    name = {'Packeges'}
+    detail = {'Packeges Detail'}
+    />
+    <Cards
+    
+    imgs={ require('../../assets/ChiltrenPackages/chiltern13.jpg')  }
+    name = {'Packeges'}
+    detail = {'Packeges Detail'}
+    />
+    <Cards
+    
+    imgs={ require('../../assets/ChiltrenPackages/chiltern14.jpg')  }
+    name = {'Packeges'}
+    detail = {'Packeges Detail'}
+    />
+    <Cards
+    
+    imgs={ require('../../assets/ChiltrenPackages/chiltern15.jpg')  }
+    name = {'Packeges'}
+    detail = {'Packeges Detail'}
+    />
+    <Cards
+    
+    imgs={ require('../../assets/ChiltrenPackages/chiltern16.jpg')  }
+    name = {'Packeges'}
+    detail = {'Packeges Detail'}
+    />
+    <Cards
+    
+    imgs={ require('../../assets/ChiltrenPackages/chiltern17.jpg')  }
+    name = {'Packeges'}
+    detail = {'Packeges Detail'}
+    />
+    <Cards
+    
+    imgs={ require('../../assets/ChiltrenPackages/chiltern18.jpg')  }
+    name = {'Packeges'}
+    detail = {'Packeges Detail'}
+    />
     </ScrollView>
         // onSelect={()=>{
         //   props.navigation.navigate({routeName: 'Partners_Detail',

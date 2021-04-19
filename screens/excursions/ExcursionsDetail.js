@@ -65,7 +65,14 @@ const  ExcursionsDetail = (props) => {
       headerTitle: excursionTitle, 
       headerRight: () => (  <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item title="compdetail"
-        iconName="ios-star"/>
+        iconName="ios-add"
+        onPress={
+          () => {
+            navigationData.navigation.navigate('Excursions_Form')
+          }
+         }
+        
+        />
       </HeaderButtons>
       )
     };

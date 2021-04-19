@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { StyleSheet,Image,TextInput,TouchableOpacity,Dimensions,Button,ScrollView, Text, View } from 'react-native';
 import Color from '../../colors/Color'
-import {HeaderButtons, Item} from 'react-navigation-header-buttons'
-import HeaderButton from '../../components/headerButton/HeaderButton'
 import { Avatar,  Card, Title, Paragraph } from 'react-native-paper';
-// import ImagePickerUpload from '../../components/imagePicker/ImageUpload'
+//import ImagePickerUpload from '../../components/imagePicker/ImageUpload'
 
 let {width:screenWidth, height:screenHeight} = Dimensions.get('window')
 
- function PackegesForm(navData) {
+ function ExcursionsForm(navData) {
     const [packege, setPackege] = useState('');
     const [cost, setCost] = useState('');
  
@@ -86,16 +84,16 @@ alignItems:'center',
 }
 
 
-PackegesForm.navigationOptions = navData => {
+ExcursionsForm.navigationOptions = navData => {
   
     return{
   
-    headerTitle:'Add Packeges',
+    headerTitle:'Add Excursions',
     
     }
   }
 
-export default PackegesForm
+export default ExcursionsForm
 const styles = StyleSheet.create({
     container: {
       flex: 1,

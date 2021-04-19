@@ -10,6 +10,7 @@ import Filter from '../../screens/filter/Filter'
 import ExcursionsDetail from '../../screens/excursions/ExcursionsDetail'
 import Login from "../../screens/authScreen/Login";
 import SignUp from "../../screens/authScreen/SignUp";
+import ExcursionsForm from "../../screens/excursions/ExcursionsForm";
 
 const BarberStackNavigation = createStackNavigator({
   
@@ -35,6 +36,9 @@ BarberBook_Appointment:{
   },
   Sign_Up:{
     screen:SignUp,
+  },
+  Excursions_Form:{
+    screen:ExcursionsForm
   },
 },
 {
