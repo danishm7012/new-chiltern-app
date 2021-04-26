@@ -13,7 +13,7 @@ import { Provider } from 'react-redux'
 enableScreens()
 
 const rootReducer = combineReducers({
-  excursion: excursionReducer,
+  excursions: excursionReducer,
 })
 const store = createStore(rootReducer, applyMiddleware(ReduxThunk))
 const fetchFonts = () => {

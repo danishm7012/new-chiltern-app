@@ -1,8 +1,8 @@
 //import Product from '../../models/product';
 
 //export const DELETE_PRODUCT = 'DELETE_PRODUCT';
-export const CREATE_EXCURSION = 'CREATE_EXCURSION'
-export const UPDATE_EXCURSION = 'UPDATE_EXCURSION'
+export const CREATE_PACKAGE = 'CREATE_PACKAGE'
+export const UPDATE_PACKAGE = 'UPDATE_PACKAGE'
 /*export const SET_PRODUCTS = 'SET_PRODUCTS';
 
 export const fetchProducts = () => {
@@ -63,39 +63,28 @@ export const deleteProduct = productId => {
   };
 };
  */
-export const createExcursion = (title, price) => {
+export const createPackage = (newData) => {
   return async (dispatch) => {
     // any async code you want!
     /* const token = getState().auth.token
     const userId = getState().auth.userId */
     const response = await fetch(
-      `https://chiltern-mobile-app-default-rtdb.firebaseio.com/excursion.json`,
+      `https://chiltern.herokuapp.com/api/package/add`,
       {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          title,
-          price,
-        }),
+        body: JSON.stringify(newData),
       }
     )
 
     const resData = await response.json()
-
-    dispatch({
-      type: CREATE_EXCURSION,
-      excursionData: {
-        id: resData.name,
-        title,
-        price,
-      },
-    })
+    console.log(resData)
   }
 }
 
-export const updateExcursion = (id, title, price) => {
+export const updatePACKAGE = (id, title, price) => {
   return async (dispatch) => {
     const response = await fetch(
       `https://rn-complete-guide.firebaseio.com/products/${id}.json`,
@@ -116,7 +105,7 @@ export const updateExcursion = (id, title, price) => {
     }
 
     dispatch({
-      type: UPDATE_EXCURSION,
+      type: UPDATE_PACKAGE,
       pid: id,
       productData: {
         title,

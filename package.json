@@ -41,6 +41,10 @@
     "react-navigation-tabs": "^2.11.0",
     "react-redux": "^7.2.3",
     "redux": "^4.0.5",
+<<<<<<< HEAD
+=======
+    "expo-image-picker": "~9.2.0",
+>>>>>>> 09c972b8834f847e8080b43d3ceb7048514bacd0
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {

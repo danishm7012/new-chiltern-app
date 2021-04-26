@@ -1,8 +1,8 @@
 import EXCURSION from '../../data/Excursions'
-import { CREATE_EXCURSION } from '../action/excursion'
+import { CREATE_EXCURSION, UPDATE_EXCURSION } from '../action/excursion'
 
 const initialState = {
-  Excursions: EXCURSION,
+  availableExcursions: EXCURSION,
 }
 
 import Excursion from '../../models/Excursion'
@@ -19,7 +19,7 @@ export default (state = initialState, action) => {
       )
       return {
         ...state,
-        Excursions: state.Excursions.concat(newExcursion),
+        availableExcursions: state.availableExcursions.concat(newExcursion),
       }
   }
   return state
