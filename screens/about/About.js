@@ -20,7 +20,7 @@ const About = props =>{
       <SocialMediaIcon/>
     </View>
     <View style={{}}>
-      <Text style={AllStyle.Aboutheading}>About Us</Text>
+      <Text style={[{fontSize:24},AllStyle.Aboutheading]}>About Us</Text>
     </View>
     
     

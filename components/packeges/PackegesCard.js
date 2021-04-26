@@ -1,14 +1,17 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { Card,  Button, Icon } from 'react-native-elements'
 import { FlatList, SafeAreaView,ScrollView, ImageBackground, Text, TouchableOpacity, View } from "react-native";
 import {Dimensions} from 'react-native'
-import ImageView from 'react-native-image-view';
 
 let {width:screenWidth, height:screenHeight} = Dimensions.get('window')
 
 
 const Cards = ({ imgs,name,detail }) => {
 
+ // const [visible, setIsVisible] = React.useState(true);
+//  useEffect(()=>{
+//   setIsVisible(false)
+//  })
  return ( 
    
 
@@ -16,7 +19,7 @@ const Cards = ({ imgs,name,detail }) => {
  >
      
         <View style={{flex:1,marginLeft:20,height:screenHeight/5}}>
-        <ImageBackground source={imgs}  style={{height:screenHeight/5,width:screenHeight/2.9}}/>
+        <ImageBackground  source={imgs} style={{height:screenHeight/5,resizeMode:'stretch' ,width:screenHeight/2.9}}/>
         {/* <Text style={{ fontFamily: 'open-sans-bold'}}>{name}</Text> */}
         
     {/* <Card.Image style={{height:screenHeight/5, width:screenHeight/2.9, resizeMode:'stretch'}} source={imgs}>
@@ -155,6 +158,30 @@ const PackegesCard = (props) => {
     <Cards
     
     imgs={ require('../../assets/ChiltrenPackages/chiltern18.jpg')  }
+    name = {'Packeges'}
+    detail = {'Packeges Detail'}
+    />
+        <Cards
+    
+    imgs={ require('../../assets/ChiltrenPackages/chiltern19.jpg')  }
+    name = {'Packeges'}
+    detail = {'Packeges Detail'}
+    />
+        <Cards
+    
+    imgs={ require('../../assets/ChiltrenPackages/chiltern20.jpg')  }
+    name = {'Packeges'}
+    detail = {'Packeges Detail'}
+    />
+        <Cards
+    
+    imgs={ require('../../assets/ChiltrenPackages/chiltern21.jpg')  }
+    name = {'Packeges'}
+    detail = {'Packeges Detail'}
+    />
+        <Cards
+    
+    imgs={ require('../../assets/ChiltrenPackages/chiltern22.jpg')  }
     name = {'Packeges'}
     detail = {'Packeges Detail'}
     />

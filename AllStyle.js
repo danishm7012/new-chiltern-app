@@ -208,7 +208,7 @@ Aboutdetail:{
     textAlign: 'justify',
     width: screenWidth * 0.93,
     
-    
+    marginLeft:8,
     fontSize: 16,
     lineHeight: 16 * 1.5,
     //paddingBottom:30,
@@ -216,9 +216,10 @@ Aboutdetail:{
 },
 Aboutheading: {
   marginTop:15,
+  marginHorizontal:8,
   color: '#444',
   textTransform: 'uppercase',
-  fontSize: 24,
+ // fontSize: 24,
   
   fontWeight: '800',
   textAlign:'center',
