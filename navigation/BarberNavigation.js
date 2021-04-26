@@ -102,7 +102,6 @@ const MainDrawerNavigator = createDrawerNavigator({
           </View>
           <DrawerItems {...props}/>
           
-         <Text style={{color:'red'}}>Footer Area After</Text>
       </SafeAreaView>
       </ScrollView>
       
