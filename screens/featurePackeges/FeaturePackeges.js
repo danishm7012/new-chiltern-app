@@ -1,20 +1,26 @@
-import React from 'react'
-import { View, FlatList, Text, TouchableOpacity } from 'react-native'
-import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper'
-import Ratting from '../../components/rating/Rating'
-import { Ionicons } from '@expo/vector-icons'
+import { Avatar, Button, Card, Paragraph, Title } from 'react-native-paper'
+import { FlatList, Text, TouchableOpacity, View } from 'react-native'
+import { HeaderButtons, Item } from 'react-navigation-header-buttons'
+
 import Color from '../../colors/Color'
 import EXCURSIONSCATEGORY from '../../data/ExcursionCategory'
-import { HeaderButtons, Item } from 'react-navigation-header-buttons'
 import HeaderButton from '../../components/headerButton/HeaderButton'
-//import EXCURSION from '../../data/Excursions'
+import { Ionicons } from '@expo/vector-icons'
+import Ratting from '../../components/rating/Rating'
+import React from 'react'
 import { useSelector } from 'react-redux'
-//import ExcursionsCards from '../../components/excursions/ExcursionsCards'
-// const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
 
-const PackegesCards = ({ price, costs, images, onSelect, title }) => {
+//import EXCURSION from '../../data/Excursions'
+
+//import ExcursionsCards from '../../components/excursions/ExcursionsCards'
+
+
+const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
+
+const PackegesCards = ({ price,keys, costs, images,onEdit, onSelect, title }) => {
+ 
   return (
-    <TouchableOpacity activeOpacity={0.3} onPress={onSelect}>
+    <TouchableOpacity activeOpacity={0.3} >
       <Card
         elevation={15}
         style={{ marginBottom: 20 }}
@@ -71,6 +77,9 @@ const PackegesCards = ({ price, costs, images, onSelect, title }) => {
         <Card.Actions>
           <Button onPress={onSelect}>Book Now</Button>
         </Card.Actions>
+        <Card.Actions>
+          <Button onPress={onEdit}>Edit Now</Button>
+        </Card.Actions>
       </Card>
     </TouchableOpacity>
   )
@@ -84,6 +93,7 @@ const FeaturePackeges = (props) => {
   const renderExcursions = (itemData) => {
     return (
       <PackegesCards
+        keys = {itemData.item._id}
         title={itemData.item.name}
         images={itemData.item.image}
         costs={itemData.item.cost}
@@ -91,6 +101,12 @@ const FeaturePackeges = (props) => {
         onSelect={() => {
           props.navigation.navigate({ routeName: 'Contact_Us' })
         }}
+        onEdit = {() => {
+          props.navigation.navigate({ routeName: 'Packeges_Form',
+        param:{
+          pkgId: itemData.item._id
+        } })
+        }} 
       />
     )
   }

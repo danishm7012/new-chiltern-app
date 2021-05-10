@@ -3,7 +3,14 @@
 //export const DELETE_PRODUCT = 'DELETE_PRODUCT';
 export const CREATE_EXCURSION = 'CREATE_EXCURSION'
 export const UPDATE_EXCURSION = 'UPDATE_EXCURSION'
-/*export const SET_PRODUCTS = 'SET_PRODUCTS';
+export const FILTER_EXCURSION = 'FILTER_EXCURSION'
+
+export const filterexcursions =  filtersetting => {
+
+  return {type:FILTER_EXCURSION, filter:filtersetting };
+};
+
+ /*export const SET_PRODUCTS = 'SET_PRODUCTS';
 
 export const fetchProducts = () => {
   return async (dispatch, getState) => {
@@ -63,7 +70,7 @@ export const deleteProduct = productId => {
   };
 };
  */
-export const createExcursion = (title, price) => {
+export const createExcursion = ({title, price}) => {
   return async (dispatch) => {
     // any async code you want!
     /* const token = getState().auth.token

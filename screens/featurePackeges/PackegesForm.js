@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
-import { StyleSheet,Image,TextInput,TouchableOpacity,Dimensions,Button,ScrollView, Text, View } from 'react-native';
-import Color from '../../colors/Color'
+import { Avatar, Card, Paragraph, Title } from 'react-native-paper';
+import { Button, Dimensions, Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import {HeaderButtons, Item} from 'react-navigation-header-buttons'
+import React, { useState } from 'react';
+
+import Color from '../../colors/Color'
 import HeaderButton from '../../components/headerButton/HeaderButton'
-import { Avatar,  Card, Title, Paragraph } from 'react-native-paper';
+import { useSelector } from 'react-redux';
+
 // import ImagePickerUpload from '../../components/imagePicker/ImageUpload'
 
 let {width:screenWidth, height:screenHeight} = Dimensions.get('window')
@@ -11,6 +14,10 @@ let {width:screenWidth, height:screenHeight} = Dimensions.get('window')
  function PackegesForm(navData) {
     const [packege, setPackege] = useState('');
     const [cost, setCost] = useState('');
+
+    const availablePakg = useSelector(state => state.excursions.updateExcursions);
+   
+console.log(displayedexcursions)
  
  return (
 
@@ -56,7 +63,7 @@ alignItems:'center',
       style={styles.TextInput}
       placeholder="Packege Title..."
       placeholderTextColor="#003f5c"
-      onChangeText={(nam) => setPackege(nam)}
+      onChangeText={ (nam) => setPackege(nam)}
     />
   </View>
    
@@ -65,7 +72,7 @@ alignItems:'center',
       style={styles.TextInput}
       placeholder="Cost..."
       placeholderTextColor="#003f5c"
-      secureTextEntry={true}
+      
       onChangeText={(cos) => setCost(cos)}
     />
   </View>

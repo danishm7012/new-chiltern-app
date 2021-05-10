@@ -1,7 +1,7 @@
 class Excursion {
   constructor(id, title, price) {
-    this.id = id
-    this.title = title
+    this._id = id
+    this.name = title
     this.price = price
   }
 }

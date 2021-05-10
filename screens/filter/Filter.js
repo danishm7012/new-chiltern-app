@@ -1,15 +1,43 @@
-import React, { useState } from "react";
-import { View, Picker,Text, StyleSheet,Dimensions } from "react-native";
+import { Dimensions, Picker, StyleSheet, Text, View } from "react-native";
 import {HeaderButtons, Item} from 'react-navigation-header-buttons'
-import HeaderButton from '../../components/headerButton/HeaderButton'
+import React, { useCallback, useEffect, useState } from "react";
+
 import {Button} from 'react-native-elements'
+import HeaderButton from '../../components/headerButton/HeaderButton'
+import {filterexcursions} from '../../store/action/excursion.js'
+import { useDispatch } from 'react-redux';
+
 let {height, width} = Dimensions.get("window")
 
-const Filter = () => {
+const Filter = (props) => {
   const [selectedValue, setSelectedValue] = useState(" ");
   const [selectedValueOrigin, setSelectedValueOrigin] = useState(" ");
   const [selectedValueDestination, setSelectedValueDestination] = useState(" ");
- 
+  const dispatch = useDispatch()
+const saveFilter = useCallback(() =>{ 
+  const appliedFilter = {
+    value:selectedValue,
+    origin:selectedValueOrigin,
+    destination:selectedValueDestination,
+  }
+  const onSelects = () => {
+    props.navigation.navigate({ routeName: 'Filter_Packeges',
+    // params:{
+    //   price : selectedValueDestination,
+    //   title : selectedValueOrigin,
+    // } 
+  })
+}
+
+  onSelects();
+  dispatch(filterexcursions(appliedFilter))
+  
+},[selectedValue,selectedValueOrigin,selectedValueDestination,dispatch]);
+
+// useEffect(()=>{
+
+// },[saveFilter])
+//const OnSelects = appliedFilter.onselect.bind(appliedFilter)
  
   return (
     <View style={styles.container}>
@@ -98,6 +126,7 @@ const Filter = () => {
       <Button
       buttonStyle={{backgroundColor:'#961a1d'}}
   title="Apply Filter"
+  onPress={saveFilter}
 />
 </View>
 </View>

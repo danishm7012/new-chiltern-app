@@ -1,16 +1,17 @@
-import { createStackNavigator } from "react-navigation-stack";
-import BarberShops from '../../screens/BarberShops'
-import BarberServices from '../../screens/BarberServices'
 import BarberBookAppointment from '../../screens/BarberBookAppointment'
+import BarberServices from '../../screens/BarberServices'
+import BarberShops from '../../screens/BarberShops'
 import Color from '../../colors/Color'
-import { createAppContainer } from "react-navigation";
-import {Platform } from "react-native"
 import ContactUs from '../../screens/contactUs/ContactUs'
-import Filter from '../../screens/filter/Filter'
 import ExcursionsDetail from '../../screens/excursions/ExcursionsDetail'
-import Login from "../../screens/authScreen/Login";
-import SignUp from "../../screens/authScreen/SignUp";
 import ExcursionsForm from "../../screens/excursions/ExcursionsForm";
+import Filter from '../../screens/filter/Filter'
+import FilterPackeges from "../../screens/filter/FilterPackeges";
+import Login from "../../screens/authScreen/Login";
+import {Platform} from "react-native"
+import SignUp from "../../screens/authScreen/SignUp";
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
 
 const BarberStackNavigation = createStackNavigator({
   
@@ -31,6 +32,9 @@ BarberBook_Appointment:{
   Filter_Screen:{
          screen:Filter,
   },
+  Filter_Packeges:{
+    screen:FilterPackeges,
+},
   Login_Screen:{
     screen:Login,
   },

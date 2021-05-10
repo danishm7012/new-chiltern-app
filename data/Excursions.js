@@ -7,6 +7,7 @@ const EXCURSION = [
     catagory: 'Attractions',
     cost: 'Cost Starting from USD 180 Per person *tc',
     price:'AED580',
+    fin:'june',
   },
   {
     _id: '2',
