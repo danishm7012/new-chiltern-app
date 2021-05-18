@@ -1,14 +1,9 @@
-import React from 'react'
-import { View, FlatList, Text } from 'react-native'
-import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper'
-import Ratting from '../../components/rating/Rating'
-import { Ionicons } from '@expo/vector-icons'
-import Color from '../../colors/Color'
-import EXCURSIONSCATEGORY from '../../data/ExcursionCategory'
+import { FlatList, Text, View } from 'react-native'
 import { HeaderButtons, Item } from 'react-navigation-header-buttons'
-import HeaderButton from '../../components/headerButton/HeaderButton'
-//import EXCURSION from '../../data/Excursions'
+
 import ExcursionsCards from '../../components/excursions/ExcursionsCards'
+import HeaderButton from '../../components/headerButton/HeaderButton'
+import React from 'react'
 import { useSelector } from 'react-redux'
 
 const ExcursionsDetail = (props) => {
@@ -20,18 +15,6 @@ const ExcursionsDetail = (props) => {
   const DisplayedSubCompanies = excursionsData.filter(
     (exer) => exer.catagory === shTitle
   )
-
-  // const ListHeader = () => {
-  //   //View to set in Header
-  //   return (
-  //     <View style={{flex:1}}>
-  //       <Text style={{fontSize:18,fontFamily:'open-sans-bold', color:'#444'}}>
-  //           Excursions
-  //       </Text>
-  //     </View>
-  //   );
-  // };
-
   const renderExcursions = (itemData) => {
     return (
       <ExcursionsCards
@@ -52,7 +35,6 @@ const ExcursionsDetail = (props) => {
         keyExtractor={(item) => item._id}
         renderItem={renderExcursions}
         numColumns={1}
-        //  ListHeaderComponent={ListHeader}
       />
     </View>
   )
@@ -60,15 +42,14 @@ const ExcursionsDetail = (props) => {
 
 ExcursionsDetail.navigationOptions = (navigationData) => {
   const excursionTitle = navigationData.navigation.getParam('excursionTitle')
-  //  const selectedCompany = ServicesData.find(shop =>shop.id===shId);
 
   return {
     headerTitle: excursionTitle,
     headerRight: () => (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
-          title='compdetail'
-          iconName='ios-add'
+          title="compdetail"
+          iconName="ios-add"
           onPress={() => {
             navigationData.navigation.navigate('Excursions_Form')
           }}

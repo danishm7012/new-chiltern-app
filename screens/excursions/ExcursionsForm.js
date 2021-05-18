@@ -15,8 +15,6 @@ import Color from '../../colors/Color'
 import { createExcursion } from '../../store/action/excursion'
 import { useDispatch } from 'react-redux'
 
-//import ImagePickerUpload from '../../components/imagePicker/ImageUpload'
-
 let { width: screenWidth, height: screenHeight } = Dimensions.get('window')
 
 function ExcursionsForm(navData) {
@@ -36,11 +34,8 @@ function ExcursionsForm(navData) {
       <Card
         elevation={65}
         style={{
-          //  flex:1,
           alignSelf: 'stretch',
           marginTop: screenHeight / 8.5,
-          // justifyContent:'center',
-          // alignItems:'center',
         }}
       >
         <View
@@ -52,15 +47,6 @@ function ExcursionsForm(navData) {
             alignItems: 'center',
           }}
         >
-          {/* <Image source = {require("./assets/logo.png")}/> */}
-
-          {/* <View style={{flex:0.3,alignSelf:'stretch',
-  justifyContent:'center',alignItems:'center', 
- 
-   }}>
- <Image style={{width:'70%',resizeMode:'stretch'}} source = {require("../../assets/chiltern-logo.png")}/>
-     </View>    */}
-
           <View
             style={{
               flex: 1,
@@ -73,8 +59,8 @@ function ExcursionsForm(navData) {
             <View style={styles.inputView}>
               <TextInput
                 style={styles.TextInput}
-                placeholder='Excursion Title...'
-                placeholderTextColor='#003f5c'
+                placeholder="Excursion Title..."
+                placeholderTextColor="#003f5c"
                 value={title}
                 onChangeText={(t) => setTitle(t)}
               />
@@ -83,18 +69,13 @@ function ExcursionsForm(navData) {
             <View style={styles.inputView}>
               <TextInput
                 style={styles.TextInput}
-                placeholder='Price...'
-                placeholderTextColor='#003f5c'
+                placeholder="Price..."
+                placeholderTextColor="#003f5c"
                 secureTextEntry={true}
                 value={price}
                 onChangeText={(p) => setPrice(p)}
               />
             </View>
-
-            {/* <TouchableOpacity>
-  <ImagePickerUpload/>
-</TouchableOpacity> */}
-
             <TouchableOpacity
               style={[{ marginBottom: screenHeight / 7 }, styles.loginBtn]}
             >
@@ -119,7 +100,6 @@ export default ExcursionsForm
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //backgroundColor: Color.accentColour,
   },
 
   inputView: {

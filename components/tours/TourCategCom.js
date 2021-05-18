@@ -10,15 +10,10 @@ export default function TourCategCom({ title, linearColor, onSelect }) {
     <ScrollView>
       <View style={[{ backgroundColor: linearColor }, styles.container]}>
         <LinearGradient
-          // Background Linear Gradient
           colors={['rgba(0,0,0,0.8)', 'transparent']}
           style={styles.background}
         />
-        {/* <LinearGradient
-          // Button Linear Gradient
-          colors={['#4c669f', '#3b5998', '#192f6a']}
-          style={styles.button}
-        > */}
+
         <View style={{ marginTop: 10, width: 100 }}>
           <Text
             style={{
@@ -42,17 +37,10 @@ export default function TourCategCom({ title, linearColor, onSelect }) {
               borderColor: '#fff',
               borderWidth: 1.5,
             }}
-            //  containerStyle={{ color: '#fff' }}
             titleStyle={{ color: '#fff' }}
             onPress={onSelect}
           />
         </View>
-        {/* <View style={{ justifyContent: 'flex-end', alignItems: 'flex-end' }}>
-          <Text style={[{ backgroundColor: 'blue', padding: 9 }, styles.text]}>
-            Journeys end in lovers meeting
-          </Text>
-        </View> */}
-        {/* </LinearGradient> */}
       </View>
     </ScrollView>
   )
@@ -60,7 +48,6 @@ export default function TourCategCom({ title, linearColor, onSelect }) {
 const styles = StyleSheet.create({
   container: {
     height: 200,
-    // alignSelf: 'stretch',
   },
   background: {
     position: 'absolute',
@@ -70,13 +57,10 @@ const styles = StyleSheet.create({
     height: 300,
   },
   button: {
-    // padding: 15,
-    // paddingHorizontal: 90,
     alignItems: 'center',
     borderRadius: 5,
   },
   text: {
-    // backgroundColor: 'transparent',
     fontSize: 15,
     color: '#fff',
   },

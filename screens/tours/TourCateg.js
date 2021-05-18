@@ -8,13 +8,22 @@ import {
   View,
 } from 'react-native'
 import { HeaderButtons, Item } from 'react-navigation-header-buttons'
+import React, { useEffect } from 'react'
 
 import HeaderButton from '../../components/headerButton/HeaderButton'
-import React from 'react'
 import TourCategCom from '../../components/tours/TourCategCom'
 import TourCategory from '../../data/TourCategory'
 
 const TourCateg = (props) => {
+  const [TourCategories, setTourCategories] = React.useState([])
+  useEffect(() => {
+    // const fetchStudent = async () => {
+    //   const { data } = await axios.get('/api/StudentData')
+    //   setStudentData(Tourpackages)
+    // }
+    setTourCategories(TourCategory)
+    //fetchStudent()
+  }, [])
   const renderTourCategory = (itemData) => {
     return (
       <TourCategCom
@@ -36,7 +45,7 @@ const TourCateg = (props) => {
   return (
     <View style={{ flex: 1 }}>
       <FlatList
-        data={TourCategory}
+        data={TourCategories}
         keyExtractor={(Item) => Item.id}
         renderItem={renderTourCategory}
 

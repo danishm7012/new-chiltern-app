@@ -1,17 +1,9 @@
-import { Dimensions, Platform } from 'react-native'
 import { DrawerItems, createDrawerNavigator } from 'react-navigation-drawer'
-import {
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native'
+import { Image, SafeAreaView, StyleSheet, View } from 'react-native'
 import React, { useState } from 'react'
 
 import AboutStackNavigation from './stackNavigation/AboutStackNavigation'
-import BarberShopsStackNavigation from './stackNavigation/BarberShopsStackNavigation'
+import ChilternMainStackNavigation from './stackNavigation/ChilternMainStackNavigation'
 import Color from '../colors/Color'
 import ContactUsStackNavigation from './stackNavigation/ContactUsStackNavigation'
 import FAQStackNavigation from './stackNavigation/FAQStackNavigation'
@@ -24,8 +16,8 @@ import { createAppContainer } from 'react-navigation'
 
 const MainDrawerNavigator = createDrawerNavigator(
   {
-    BarberShops: {
-      screen: BarberShopsStackNavigation,
+    ChilternMain: {
+      screen: ChilternMainStackNavigation,
       navigationOptions: {
         drawerIcon: () => <Ionicons name="home" size={25} color="white" />,
 
@@ -117,9 +109,7 @@ const MainDrawerNavigator = createDrawerNavigator(
         </ScrollView>
       )
     },
-    // drawerWidth: Dimensions.get('window').width * 1,
     drawerBackgroundColor: Color.drawerColor,
-    // width: Dimensions.get('window').width * 2,
     contentOptions: {
       activeTintColor: 'hsla(360, 100%, 100%, 1.0)',
       activeBackgroundColor: Color.accentColour,

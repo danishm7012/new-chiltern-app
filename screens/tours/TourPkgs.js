@@ -1,22 +1,21 @@
-import { Avatar, Button, Card, Icon } from 'react-native-elements'
-import {
-  FlatList,
-  SafeAreaView,
-  ScrollView,
-  Share,
-  Text,
-  View,
-} from 'react-native'
-import { HeaderButtons, Item } from 'react-navigation-header-buttons'
+import { FlatList, View } from 'react-native'
+import React, { useEffect } from 'react'
 
-import HeaderButton from '../../components/headerButton/HeaderButton'
-import React from 'react'
 import TourPackeges from '../../data/TourPackeges'
 import TourPkgsCom from '../../components/tours/TourPkgs'
 
 const TourPkgs = (props) => {
+  const [TourPackege, setTourPackege] = React.useState([])
+  useEffect(() => {
+    // const fetchStudent = async () => {
+    //   const { data } = await axios.get('/api/StudentData')
+    //   setStudentData(Tourpackages)
+    // }
+    setTourPackege(TourPackeges)
+    //fetchStudent()
+  }, [])
   const title = props.navigation.getParam('tourTitle')
-  const TourPkgsData = TourPackeges.filter((titl) => titl.catagory === title)
+  const TourPkgsData = TourPackege.filter((titl) => titl.catagory === title)
   const renderTourpkgs = (itemData) => {
     return (
       <TourPkgsCom

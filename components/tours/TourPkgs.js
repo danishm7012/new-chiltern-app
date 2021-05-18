@@ -1,22 +1,14 @@
-import { Avatar, Button, Card, Paragraph, Title } from 'react-native-paper'
+import { Button, Card, Paragraph, Title } from 'react-native-paper'
 import { TouchableOpacity, View } from 'react-native'
 
 import Color from '../../colors/Color'
-import { Icon } from 'react-native-elements'
 import { Ionicons } from '@expo/vector-icons'
 import React from 'react'
-
-//import Ratting from '../../components/rating/Rating'
 
 const TourPkgsCom = ({ name, cost, duration, onSelect }) => {
   return (
     <TouchableOpacity activeOpacity={0.3} onPress={onSelect}>
-      <Card
-        elevation={15}
-        style={{ marginBottom: 20 }}
-        //   onPress= {()=>{
-        //     props.navigation.navigate({routeName: 'Contact_Us'})}}
-      >
+      <Card elevation={15} style={{ marginBottom: 20 }}>
         <Card.Cover
           style={{ resizeMode: 'stretch' }}
           source={require('../../assets/images/services/city.jpg')}
@@ -39,19 +31,7 @@ const TourPkgsCom = ({ name, cost, duration, onSelect }) => {
               justifyContent: 'flex-start',
               alignItems: 'flex-start',
             }}
-          >
-            {/* {address && (
-              <Ionicons
-                name="location"
-                size={18}
-                color={Color.primaryColour}
-                style={{}}
-              />
-            )}
-            <Paragraph numberOfLines={1} ellipsizeMode="tail" style={{}}>
-              {address}
-            </Paragraph> */}
-          </View>
+          ></View>
           <View
             style={{
               flexDirection: 'row',
@@ -59,8 +39,6 @@ const TourPkgsCom = ({ name, cost, duration, onSelect }) => {
               justifyContent: 'space-between',
             }}
           >
-            {/* <Ratting/> */}
-
             <View style={{ flexDirection: 'row' }}>
               {cost && (
                 <Ionicons
@@ -82,42 +60,6 @@ const TourPkgsCom = ({ name, cost, duration, onSelect }) => {
                 />
               )}
               <Paragraph style={{}}>{duration} </Paragraph>
-              {/* {bath && (
-                <Icon
-                  name="bathtub"
-                  type="font-awesome"
-                  size={24}
-                  color="#121212"
-                  style={{ marginLeft: 5 }}
-                />
-              )}
-              <Paragraph numberOfLines={1} style={{}}>
-                {' '}
-                {bath}{' '}
-              </Paragraph>
-              {giraaj && (
-                <Icon
-                  name="car"
-                  type="font-awesome"
-                  color="#121212"
-                  size={24}
-                  style={{ marginLeft: 5 }}
-                />
-              )}
-              <Paragraph style={{}}> {giraaj}</Paragraph>
-
-              {area && (
-                <Icon
-                  name="square-foot"
-                  type="material"
-                  color="#121212"
-                  size={28}
-                  style={{}}
-                />
-              )}
-              <Paragraph ellipsizeMode="tail" style={{}}>
-                {area}
-              </Paragraph> */}
             </View>
           </View>
         </Card.Content>

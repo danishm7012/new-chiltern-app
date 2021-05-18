@@ -1,23 +1,13 @@
+import { Rating } from 'react-native-elements'
 import React from 'react'
-import { View } from 'react-native';
-import { Rating, AirbnbRating } from 'react-native-elements';
-
-
-
+import { View } from 'react-native'
 
 const Ratting = () => {
-   return (
-
-      <View style={{}}>
- <Rating
-  showRating ={false}
-  //onFinishRating={this.ratingCompleted}
-  
-  style={{  }}
-/>
-
-      </View>
-    );
+  return (
+    <View style={{}}>
+      <Rating showRating={false} style={{}} />
+    </View>
+  )
 }
 
 export default Ratting

@@ -1,34 +1,33 @@
 import {
-  Avatar,
-  Button,
-  Icon,
-  PricingCard,
-  SocialIcon,
-  Tile,
-} from 'react-native-elements'
-import {
   Dimensions,
   Image,
   SafeAreaView,
   ScrollView,
   StatusBar,
   Text,
-  TouchableOpacity,
   View,
 } from 'react-native'
 import { HeaderButtons, Item } from 'react-navigation-header-buttons'
+import React, { useEffect } from 'react'
 
 import AllStyle from '../../AllStyle'
 import Color from '../../colors/Color'
 import HeaderButton from '../../components/headerButton/HeaderButton'
 import { Ionicons } from '@expo/vector-icons'
-import React from 'react'
-import SwiperComponent from '../../components/barberShopScreens/SwiperCard'
 import Tourpackages from '../../data/TourPackeges'
 
 let { width: screenWidth, height: screenHeight } = Dimensions.get('window')
 
 const TourPkgsDetail = (props) => {
+  // const [TourPackege, setTourPackege] = React.useState([])
+  // useEffect(() => {
+  //   // const fetchStudent = async () => {
+  //   //   const { data } = await axios.get('/api/StudentData')
+  //   //   setStudentData(Tourpackages)
+  //   // }
+  //   setTourPackege(Tourpackages)
+  //   //fetchStudent()
+  // }, [])
   const pkgTitle = props.navigation.getParam('tourTitle')
   const countryId = props.navigation.getParam('tourId')
   const selectedTour = Tourpackages.find((tour) => tour.id === countryId)
@@ -167,27 +166,6 @@ const TourPkgsDetail = (props) => {
                 </Text>
               </View>
             ))}
-
-            {/* <View style={{ marginBottom: 20 }}>
-              <Button
-                onPress={() => {
-                  props.navigation.navigate({ routeName: 'Contact_Us' })
-                }}
-                title="Inquiry Now"
-                raised={true}
-              />
-            </View> */}
-            {/* <View style={{paddingTop: StatusBar.currentHeight*1.2, justifyContent:'center',alignItems:'center'}}>
-      <SocialMediaIcon
-      //  style={AllStyles.logo}
-      //  style={{position:'absolute'}}
-       facebookSocial={socialLinks.facebook}
-       twitterSocial={socialLinks.twitter}
-       linkedInSocial={socialLinks.linkedIn}
-       instagramSocial={socialLinks.instagram}
-       websiteSocial={socialLinks.website}
-      />
-      </View> */}
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -196,7 +174,6 @@ const TourPkgsDetail = (props) => {
 }
 TourPkgsDetail.navigationOptions = (navigationData) => {
   const serTitle = navigationData.navigation.getParam('tourTitle')
-  // const selectedCompany = ServicesData.find(shop =>shop.id===shId);
 
   return {
     headerTitle: serTitle,
