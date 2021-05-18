@@ -1,5 +1,6 @@
 import {
   Dimensions,
+  Image,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -13,7 +14,6 @@ import { Button } from 'react-native-elements'
 import HeaderButton from '../components/headerButton/HeaderButton'
 import React from 'react'
 import SERVICES from '../data/Services'
-import SwiperComponent from '../components/barberShopScreens/SwiperCard'
 
 let { width: screenWidth, height: screenHeight } = Dimensions.get('window')
 
@@ -25,7 +25,7 @@ const ChilternServicesDetail = (props) => {
   return (
     <View style={{ flex: 1 }}>
       <View style={AllStyle.aboutSwiper}>
-        <SwiperComponent serImage={selectedCompany.image} />
+        <Image style={AllStyle.aboutimage} source={selectedCompany.image} />
       </View>
       <View style={{}}>
         <Text style={AllStyle.Aboutheading}>Detail</Text>
