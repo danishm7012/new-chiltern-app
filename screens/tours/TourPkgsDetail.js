@@ -14,29 +14,37 @@ import AllStyle from '../../AllStyle'
 import Color from '../../colors/Color'
 import HeaderButton from '../../components/headerButton/HeaderButton'
 import { Ionicons } from '@expo/vector-icons'
-import Tourpackages from '../../data/TourPackeges'
+import axios from 'axios'
 
 let { width: screenWidth, height: screenHeight } = Dimensions.get('window')
 
 const TourPkgsDetail = (props) => {
-  // const [TourPackege, setTourPackege] = React.useState([])
-  // useEffect(() => {
-  //   // const fetchStudent = async () => {
-  //   //   const { data } = await axios.get('/api/StudentData')
-  //   //   setStudentData(Tourpackages)
-  //   // }
-  //   setTourPackege(Tourpackages)
-  //   //fetchStudent()
-  // }, [])
   const pkgTitle = props.navigation.getParam('tourTitle')
-  const countryId = props.navigation.getParam('tourId')
-  const selectedTour = Tourpackages.find((tour) => tour.id === countryId)
-  const incld = selectedTour.inclusions
-  const precaution = selectedTour.precaution
-  const exclude = selectedTour.exclude
-  const inclsion = selectedTour.include
-  const brngTo = selectedTour.bringTo
-  const notAllowed = selectedTour.notAllowed
+  const id = props.navigation.getParam('tourId')
+
+  const [TourPackegeDetail, setTourPackegeDetail] = React.useState({})
+  useEffect(() => {
+    const fetchPackeges = async () => {
+      try {
+        const { data } = await axios.get(
+          `https://chiltern.herokuapp.com/api/package/ID/${id}`
+        )
+        setTourPackegeDetail(data)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    // setTourPackege(TourPackeges)
+    fetchPackeges()
+  }, [id])
+
+  //const selectedTour = Tourpackages.find((tour) => tour.id === countryId)
+  //const inclusion = TourPackegeDetail.inclusions
+  const precaution = TourPackegeDetail.precaution
+  const exclude = TourPackegeDetail.exclude
+  //const include = TourPackegeDetail.include
+  const brngTo = TourPackegeDetail.bringTo
+  const notAllowed = TourPackegeDetail.notAllowed
   return (
     <View style={{ flex: 1 }}>
       <View style={AllStyle.aboutSwiper}>
@@ -65,7 +73,7 @@ const TourPkgsDetail = (props) => {
                 Packege Include..!
               </Text>
             </View>
-            {incld.map((data) => (
+            {/* {inclusion.map((data) => (
               <View key={data}>
                 <Text style={AllStyle.Aboutdetail}>
                   <Ionicons
@@ -77,7 +85,7 @@ const TourPkgsDetail = (props) => {
                   {data}
                 </Text>
               </View>
-            ))}
+            ))} */}
 
             <View style={{}}>
               {exclude && (
@@ -87,19 +95,20 @@ const TourPkgsDetail = (props) => {
               )}
             </View>
 
-            {exclude.map((data) => (
-              <View key={data}>
-                <Text style={AllStyle.Aboutdetail}>
-                  <Ionicons
-                    name="arrow-forward"
-                    size={20}
-                    color={Color.primaryColour}
-                    style={{}}
-                  />{' '}
-                  {data}
-                </Text>
-              </View>
-            ))}
+            {exclude &&
+              exclude.map((data) => (
+                <View key={data}>
+                  <Text style={AllStyle.Aboutdetail}>
+                    <Ionicons
+                      name="arrow-forward"
+                      size={20}
+                      color={Color.primaryColour}
+                      style={{}}
+                    />{' '}
+                    {data}
+                  </Text>
+                </View>
+              ))}
 
             <View style={{}}>
               {brngTo && (
@@ -109,19 +118,20 @@ const TourPkgsDetail = (props) => {
               )}
             </View>
 
-            {brngTo.map((data) => (
-              <View key={data}>
-                <Text style={AllStyle.Aboutdetail}>
-                  <Ionicons
-                    name="arrow-forward"
-                    size={20}
-                    color={Color.primaryColour}
-                    style={{}}
-                  />{' '}
-                  {data}
-                </Text>
-              </View>
-            ))}
+            {brngTo &&
+              brngTo.map((data) => (
+                <View key={data}>
+                  <Text style={AllStyle.Aboutdetail}>
+                    <Ionicons
+                      name="arrow-forward"
+                      size={20}
+                      color={Color.primaryColour}
+                      style={{}}
+                    />{' '}
+                    {data}
+                  </Text>
+                </View>
+              ))}
 
             <View style={{}}>
               {notAllowed && (
@@ -131,19 +141,20 @@ const TourPkgsDetail = (props) => {
               )}
             </View>
 
-            {notAllowed.map((data) => (
-              <View key={data}>
-                <Text style={AllStyle.Aboutdetail}>
-                  <Ionicons
-                    name="arrow-forward"
-                    size={20}
-                    color={Color.primaryColour}
-                    style={{}}
-                  />{' '}
-                  {data}
-                </Text>
-              </View>
-            ))}
+            {notAllowed &&
+              notAllowed.map((data) => (
+                <View key={data}>
+                  <Text style={AllStyle.Aboutdetail}>
+                    <Ionicons
+                      name="arrow-forward"
+                      size={20}
+                      color={Color.primaryColour}
+                      style={{}}
+                    />{' '}
+                    {data}
+                  </Text>
+                </View>
+              ))}
 
             <View style={{}}>
               {precaution && (
@@ -153,19 +164,20 @@ const TourPkgsDetail = (props) => {
               )}
             </View>
 
-            {precaution.map((data) => (
-              <View key={data}>
-                <Text style={AllStyle.Aboutdetail}>
-                  <Ionicons
-                    name="arrow-forward"
-                    size={20}
-                    color={Color.primaryColour}
-                    style={{}}
-                  />{' '}
-                  {data}
-                </Text>
-              </View>
-            ))}
+            {precaution &&
+              precaution.map((data) => (
+                <View key={data}>
+                  <Text style={AllStyle.Aboutdetail}>
+                    <Ionicons
+                      name="arrow-forward"
+                      size={20}
+                      color={Color.primaryColour}
+                      style={{}}
+                    />{' '}
+                    {data}
+                  </Text>
+                </View>
+              ))}
           </View>
         </ScrollView>
       </SafeAreaView>

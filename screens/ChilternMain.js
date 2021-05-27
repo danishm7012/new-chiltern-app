@@ -11,6 +11,8 @@ import PackegesCard from '../components/packeges/PackegesCard'
 import SERVICES from '../data/Services'
 import SearchBars from '../components/searchComponent/SearchBar'
 import Services from '../components/services/Services'
+import TourCategory from '../data/TourCategory'
+import TourPackegesHomeCategory from './../components/tours/TourPackegesHomeCategory'
 
 const ChilternMain = (props) => {
   const [Service, setSERVICES] = React.useState([])
@@ -24,6 +26,24 @@ const ChilternMain = (props) => {
     setExcursionCategory(EXCURSIONSCATEGORY)
     //fetchStudent()
   }, [])
+
+  const renderTourPackegesCategory = (itemData) => {
+    return (
+      <TourPackegesHomeCategory
+        title={itemData.item.name}
+        logo={itemData.item.logo}
+        onSelect={() => {
+          props.navigation.navigate({
+            routeName: 'Tour_Pkgs',
+            params: {
+              tourId: itemData.item.id,
+              tourTitle: itemData.item.name,
+            },
+          })
+        }}
+      />
+    )
+  }
 
   const renderExcursionItem = (itemData) => {
     return (
@@ -61,25 +81,25 @@ const ChilternMain = (props) => {
     )
   }
 
-  const packegesFooter = () => {
-    return (
-      <View>
-        <View style={{ flex: 0.3 }}>
-          <Text
-            style={{
-              fontSize: 18,
-              flex: 1,
-              fontFamily: 'open-sans-bold',
-              color: '#444',
-            }}
-          >
-            Packeges
-          </Text>
-        </View>
-        <PackegesCard />
-      </View>
-    )
-  }
+  // const packegesFooter = () => {
+  //   return (
+  //     <View>
+  //       <View style={{ flex: 0.3 }}>
+  //         <Text
+  //           style={{
+  //             fontSize: 18,
+  //             flex: 1,
+  //             fontFamily: 'open-sans-bold',
+  //             color: '#444',
+  //           }}
+  //         >
+  //           Packeges
+  //         </Text>
+  //       </View>
+  //       <PackegesCard />
+  //     </View>
+  //   )
+  // }
 
   return (
     <SafeAreaView>
@@ -90,7 +110,7 @@ const ChilternMain = (props) => {
           <View style={{ flex: 0.8 }}>
             <CustomCarousel />
           </View>
-          <View style={{ flex: 1, flexDirection: 'row', marginTop: 5 }}>
+          {/* <View style={{ flex: 1, flexDirection: 'row', marginTop: 5 }}>
             <SearchBars />
             <Button
               icon={<Icon name="search" size={39} color="#961a1d" />}
@@ -113,6 +133,29 @@ const ChilternMain = (props) => {
               containerStyle={{ flex: 1, borderColor: '#444' }}
               buttonStyle={{ borderColor: '#444', borderWidth: 0.5 }}
             />
+          </View> */}
+          <View style={{ flex: 0.3 }}>
+            <Text
+              style={{
+                fontSize: 18,
+                flex: 1,
+                fontFamily: 'open-sans-bold',
+                color: '#444',
+              }}
+            >
+              Choose Tour Destination
+            </Text>
+          </View>
+          <View style={{ flex: 1 }}>
+            <FlatList
+              data={TourCategory}
+              keyExtractor={(Item) => Item.id}
+              renderItem={renderTourPackegesCategory}
+              nestedScrollEnabled={true}
+              keyboardShouldPersistTaps="always"
+              listViewDisplayed={false}
+              numColumns={2}
+            />
           </View>
 
           <View style={{ flex: 0.3 }}>
@@ -134,7 +177,7 @@ const ChilternMain = (props) => {
                 data={Service}
                 keyExtractor={(Item) => Item._id}
                 renderItem={renderServicesItem}
-                ListFooterComponent={packegesFooter}
+                // ListFooterComponent={packegesFooter}
                 nestedScrollEnabled={true}
                 keyboardShouldPersistTaps="always"
                 listViewDisplayed={false}

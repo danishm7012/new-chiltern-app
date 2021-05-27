@@ -1,9 +1,10 @@
+import { ActivityIndicator, Text, TouchableOpacity, View } from 'react-native'
 import { Button, Card, Paragraph, Title } from 'react-native-paper'
-import { TouchableOpacity, View } from 'react-native'
+import React, { useEffect } from 'react'
 
 import Color from '../../colors/Color'
+import { Icon } from 'react-native-elements'
 import { Ionicons } from '@expo/vector-icons'
-import React from 'react'
 
 const TourPkgsCom = ({ name, cost, duration, onSelect }) => {
   return (
@@ -11,7 +12,7 @@ const TourPkgsCom = ({ name, cost, duration, onSelect }) => {
       <Card elevation={15} style={{ marginBottom: 20 }}>
         <Card.Cover
           style={{ resizeMode: 'stretch' }}
-          source={require('../../assets/images/services/city.jpg')}
+          source={require('../../assets/ChiltrenPackages/chiltern17.jpg')}
         />
         <Card.Content>
           <View
@@ -41,14 +42,15 @@ const TourPkgsCom = ({ name, cost, duration, onSelect }) => {
           >
             <View style={{ flexDirection: 'row' }}>
               {cost && (
-                <Ionicons
-                  name="flash"
+                <Icon
+                  name="money-bill-wave"
+                  type="font-awesome-5"
                   size={24}
                   color={Color.primaryColour}
                   style={{}}
                 />
               )}
-              <Paragraph style={{}}>{cost}</Paragraph>
+              <Paragraph style={{}}>Start from {cost}</Paragraph>
             </View>
             <View style={{ flexDirection: 'row' }}>
               {duration && (
@@ -64,16 +66,19 @@ const TourPkgsCom = ({ name, cost, duration, onSelect }) => {
           </View>
         </Card.Content>
         <Card.Actions
-          style={{ alignItems: 'flex-end', justifyContent: 'space-between' }}
+          style={{
+            alignItems: 'flex-end',
+            justifyContent: 'space-between',
+          }}
         >
-          <Paragraph style={{ color: '#e00000' }}> Status</Paragraph>
+          {/* <Paragraph style={{ color: '#e00000' }}> Status</Paragraph> */}
 
           <Button
             mode="contained"
             style={{ backgroundColor: '#e00000' }}
             onPress={onSelect}
           >
-            Inquiry Now
+            Detail
           </Button>
         </Card.Actions>
       </Card>
